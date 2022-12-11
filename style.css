@@ -1,0 +1,429 @@
+* {
+    font-family: Helvetica, sans-serif;
+}
+body {
+    margin:0;
+    padding: 0;
+    border:0;
+    box-sizing: border-box;
+}
+.header_container {
+    height:100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.header_container::after {
+    content: "";
+    background-image: url(./img/main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #0844a4;
+    padding: 30px;
+    
+}
+.header h1{
+    font-size: 65px;
+    color: #0844a4;
+    letter-spacing: 2px;
+    margin-top: 0;
+}
+.header a{
+    background-color: blue;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+.aboutme_container {
+    height: calc(100vh - 76px);
+    width: 100%;
+}
+.nav {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    grid-template-areas: "about experience interests getintouch";
+    grid-template-rows: auto;
+    justify-content: end;
+    color: #0844a4;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 30px 30px 30px 0px;  
+}
+.nav_about ,.nav_experience,.nav_interests,.nav_getintouch{
+    text-align: center;
+    border-right: #e4e3e3 solid 2px;
+}
+.nav_about {
+    grid-area: about;
+}
+.nav_experience {
+    grid-area: experience;
+}
+.nav_interests {
+    grid-area: interests;
+}
+.nav_getintouch {
+    grid-area: getintouch;
+    border:none;
+}
+.nav a {
+    text-decoration: none;
+}
+.nav a:visited {
+    color:#0844a4;
+}
+.nav a:hover {
+    color:#606060;
+}
+.aboutme {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas: "about about about" "photo text text" "photo  columns  columns";
+    grid-template-rows: 1fr 1fr 2fr;
+    justify-items: center;
+}
+.aboutme>h1 {
+    grid-area: about;
+    font-size: 50px;
+    color: #0844a4;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.aboutme_photo {
+    grid-area: photo;
+    width: 200px;
+    height:290px;
+    margin-left: 100px;
+}
+.aboutme_text {
+    grid-area: text;
+    text-align: center;
+    color: #606060;
+    width: 300px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.aboutme_text hr {
+    size: 2px;
+    background-color: #e4e3e3;
+    width: 200px;
+    margin: 20px;
+}
+.columns {
+    grid-area: columns;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-left: -100px;  
+}
+.strengths, .goals, .dreams {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+.tick {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.columns img {
+    height: 50px;
+    width:50px;
+    margin: 10px;
+}
+.overview {
+    color: #606060;
+    margin-left: 50px;
+}
+.columns_ul {
+    margin:0;
+    width: 150px;
+}
+.columns h1 {
+    color: #0844a4;
+    font-size: 23px;
+}
+.experience {
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr 4fr 1fr;
+    grid-template-areas: 
+    ". . experience . ."
+    ". experience_block1 diagrama experience_block2 ."
+    ". . sectors . .";
+    grid-template-rows: 2fr 4fr 2fr;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 26px);
+    width: 100%;  
+}
+.experience h1 {
+    grid-area: experience;
+    text-align: center;
+}
+ul {
+    padding: 5px;
+}
+.experience_block1{
+    grid-area: experience_block1;
+}
+.experience_block2 {
+    grid-area: experience_block2;
+  
+}
+.experience_block1,.experience_block2 {
+    text-align: center;
+    border: 2px solid rgb(152, 152, 152);
+    padding: 20px;
+    color: #606060;
+    width:318px;
+}
+
+.diagrama {
+    grid-area: diagrama;
+    display: flex;
+    justify-content: center;
+}
+.diagrama_shape {
+    width: 260px;
+    height: 260px;
+    border-radius: 9999px;
+    background: conic-gradient(
+  red 0%, red 30%,
+  yellow 30%, yellow 40%,
+  green 40%, green 70%,
+  blue  70%, blue 100%
+ );
+ border: 2px solid black;
+ position: relative;
+}
+.diagrama_shape::after {
+    content: "";
+    position: absolute;
+    width:150px;
+    height:150px;
+    border-radius: 9999px;
+    border: 2px solid black;
+    top: 55px;
+    left: 55px;
+    background-color: white;
+    z-index:1;
+}
+
+.sectors {
+    grid-area: sectors;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    grid-template-areas: "blue red yellow green";
+    grid-template-rows: auto;
+    justify-items: center  
+}
+.experience h1 {
+    font-size: 50px;
+    color: #0844a4;
+    font-weight: bold;
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+}
+.blue {
+    grid-area: blue;
+    background-color: blue;
+    padding:10px;
+    border: 2px solid black;
+    border-radius: 2em;
+}
+.red {
+    grid-area: red;
+    background-color: red;
+    padding:10px;
+    border: 2px solid black;
+    border-radius: 2em;
+}
+.yellow {
+    grid-area: yellow;
+    background-color: yellow;
+    padding:10px 15px;
+    border: 2px solid black;
+    border-radius: 2em;
+}
+.green {
+    grid-area: green;
+    background-color: green;
+    padding:10px 20px;
+    border: 2px solid black;
+    border-radius: 2em;
+}
+.interests_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 26px);
+    width: 100%; 
+}
+.interests {
+    display: flex;
+    flex-direction: column;
+    justify-items: space-between;
+    color: #606060;
+}
+.interests img {
+    width:300px;
+    height: 200px;
+}
+.interest1, .interest2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.interest1_text, .interest2_text{
+    width:40%;
+    text-align: center;
+}
+.interest2_text {
+    margin-right: 100px;
+}
+.interest1_text {
+    margin-left: 100px;
+}
+.interests_container h1 {
+    font-size: 50px;
+    color: #0844a4;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.getintouch_container {
+    height: calc(100vh - 26px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.getintouch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form form {
+    display: grid;
+    grid-template-columns: 5fr 5fr 4fr;
+    grid-template-areas: 
+    "message message message"
+    "email name button";
+    grid-template-rows: 2fr 1fr;
+}
+.message {
+    grid-area: message;
+    width: 700px;
+    height:100px;
+    margin: 10px;
+    padding: 5px 0px 5px 15px;
+    color: #606060;
+}
+.email {
+    grid-area: email;
+    margin: 10px;
+    padding: 5px 0px 5px 15px;
+    color: #606060;
+}
+.name {
+    grid-area: name;
+    margin: 10px;
+    padding: 5px 0px 5px 15px;
+    color: #606060;
+}
+.button {
+    grid-area: button;
+    margin: 10px;
+    background-color: #0844a4;
+    color: aliceblue;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: white;
+    color:#0844a4;
+}
+.contactme {
+    margin: 20px 0px 60px;
+    text-align: center;
+}
+.getintouch h1 {
+    margin-bottom: 0px;
+    font-size: 50px;
+    color: #0844a4;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.contactme {
+    color: #606060;
+}
+.form_input *:focus {
+    border: rgb(3, 3, 121) solid 2px;
+    
+}
+.form_input *{
+    font-size: 20px;
+    border: #0844a4 solid 2px;
+}
+.socialmedia img {
+    width: 40px;
+    height: 40px;
+}
+.socialmedia a {
+    text-decoration: none;
+}
+.socialmedia {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    margin: 5px 0px 20px;
+}
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+.copyright img{
+    width: 20px;
+    height: 20px;
+}
+.getintouch_container hr {
+    size: 2px;
+    background-color: #e4e3e3;
+    width: 99%;
+    margin-top: 50px;
+}
+.top {
+    display: flex;
+    justify-content: end;
+}
+.top a {
+    text-decoration: none;
+    color: #0844a4;
+    font-size: 23px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-right: 25px;
+}
